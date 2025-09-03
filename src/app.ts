@@ -5,9 +5,9 @@ import errorHandler from "./middlewares/ErrorHandler";
 import morgan from "morgan";
 import usersRouter from "./apis/users/users.routes";
 import urlsRouter from "./apis/urls/urls.routes";
+import config from "./config";
 
 const app = express();
-const PORT = 8000;
 
 app.use(express.json());
 app.use(morgan("dev"));
@@ -19,6 +19,6 @@ app.use(notFound);
 app.use(errorHandler);
 
 connectDB();
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(config.PORT, () => {
+  console.log(`Server is running on port ${config.PORT}`);
 });
