@@ -1,5 +1,4 @@
 import express, { RequestHandler } from "express";
-
 const router = express.Router();
 
 import { signup, signin, getUsers } from "./users.controllers";
